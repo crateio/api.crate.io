@@ -1,5 +1,5 @@
 git+https://github.com/toastdriven/django-tastypie.git
-git+https://github.com/crateio/warehouse.git
+git+https://github.com/crateio/warehouse.git@f37959e8f04d381372ba6bb9721003102df86c19
 git+https://github.com/dstufft/twelve.git
 
 greenlet==0.4.0
