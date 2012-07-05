@@ -10,6 +10,12 @@ CONF_ROOT = os.path.dirname(__file__)
 
 DATABASES = config.databases
 
+DATABASES["default"]["ENGINE"] = "django_hstore.postgresql_psycopg2"
+
+SOUTH_DATABASE_ADAPTERS = {
+    "default": "south.db.postgresql_psycopg2",
+}
+
 SECRET_KEY = config.secret_key
 
 if "default" in config.emails:
