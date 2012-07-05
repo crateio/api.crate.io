@@ -1,0 +1,6 @@
+git+https://github.com/crateio/warehouse.git
+git+https://github.com/dstufft/twelve.git
+
+greenlet==0.4.0
+gevent==0.13.7
+gunicorn==0.14.5
