@@ -5,6 +5,7 @@ import twelve
 config = twelve.Configuration(adapter="django")
 
 DEBUG = True
+TASTYPIE_FULL_DEBUG = True
 
 CONF_ROOT = os.path.dirname(__file__)
 
