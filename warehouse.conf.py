@@ -24,7 +24,8 @@ SECRET_KEY = config.secret_key
 
 STATIC_URL = "https://dtl9zya2lik3.cloudfront.net/"
 
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+#DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+DEFAULT_FILE_STORAGE = "fixed_storage.FixedS3BotoStorage"
 
 AWS_ACCESS_KEY_ID = config.aws_access_key_id
 AWS_SECRET_ACCESS_KEY = config.aws_secret_access_key
