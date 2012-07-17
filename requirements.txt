@@ -1,6 +1,9 @@
 git+https://github.com/toastdriven/django-tastypie.git@a57d85b77b65099a077b5aab795e6cfb47617cb8
-git+https://github.com/crateio/warehouse.git@4f31440d5f8ae5c17aa8c0eab541512a6770e487
+git+https://github.com/crateio/warehouse.git@2cdb4a554f4d5069c6f93863cd3d1e65703b9f94
 git+https://github.com/dstufft/twelve.git@5966d90f41ad88d2e43e86f5e95fe1394ba902ce
+
+django-storages==1.1.4
+boto==2.5.2
 
 greenlet==0.4.0
 gevent==0.13.7
