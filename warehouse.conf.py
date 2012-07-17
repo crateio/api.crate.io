@@ -17,12 +17,11 @@ SOUTH_DATABASE_ADAPTERS = {
     "default": "south.db.postgresql_psycopg2",
 }
 
-SECRET_KEY = config.secret_key
-
 if "default" in config.emails:
     for k, v in config.emails["default"].items():
         globals()["EMAIL_%s" % k] = v
 
+SECRET_KEY = config.secret_key
 
 STATIC_URL = "https://dtl9zya2lik3.cloudfront.net/"
 
