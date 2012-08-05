@@ -18,6 +18,7 @@ SOUTH_DATABASE_ADAPTERS = {
 
 EXTRA_INSTALLED_APPS = [
     "raven.contrib.django",
+    "djangosecure",
 ]
 
 if "default" in config.emails:
