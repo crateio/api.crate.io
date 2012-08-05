@@ -21,6 +21,10 @@ EXTRA_INSTALLED_APPS = [
     "djangosecure",
 ]
 
+EXTRA_MIDDLEWARE_CLASSES = [
+    "djangosecure.middleware.SecurityMiddleware",
+]
+
 if "default" in config.emails:
     for k, v in config.emails["default"].items():
         globals()["EMAIL_%s" % k] = v
@@ -42,3 +46,14 @@ AWS_S3_SECURE_URLS = False
 AWS_HEADERS = {
     "Cache-Control": "max-age=31556926",
 }
+
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+
+SECURE_HSTS_SECONDS = 31557600
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_FRAME_DENY = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = True
