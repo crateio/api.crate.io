@@ -40,6 +40,9 @@ AWS_ACCESS_KEY_ID = config.aws_access_key_id
 AWS_SECRET_ACCESS_KEY = config.aws_secret_access_key
 AWS_STORAGE_BUCKET_NAME = config.aws_storage_bucket_name
 
+if config.aws_s3_custom_domain:
+    AWS_S3_CUSTOM_DOMAIN = config.aws_s3_custom_domain
+
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_SECURE_URLS = False
 
