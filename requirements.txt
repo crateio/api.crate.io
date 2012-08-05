@@ -34,3 +34,7 @@ psycopg2==2.4.5
 greenlet==0.4.0
 gevent==0.13.7
 gunicorn==0.14.5
+
+# Error Logging
+simplejson==2.4.0
+raven==2.0.3

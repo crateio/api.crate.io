@@ -16,6 +16,10 @@ SOUTH_DATABASE_ADAPTERS = {
     "default": "south.db.postgresql_psycopg2",
 }
 
+EXTRA_INSTALLED_APPS = [
+    "raven.contrib.django",
+]
+
 if "default" in config.emails:
     for k, v in config.emails["default"].items():
         globals()["EMAIL_%s" % k] = v
