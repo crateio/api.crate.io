@@ -50,6 +50,8 @@ AWS_HEADERS = {
     "Cache-Control": "max-age=31556926",
 }
 
+WAREHOUSE_PACKAGE_BASE_DIR = "files"
+
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 SESSION_COOKIE_SECURE = True
