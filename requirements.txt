@@ -8,7 +8,7 @@ Django==1.4.1
 django-appconf==0.5
 django-model-utils==1.1.0
 django-hstore==1.1.1
-git+https://github.com/toastdriven/django-tastypie.git@a57d85b77b65099a077b5aab795e6cfb47617cb8
+git+https://github.com/dstufft/django-tastypie.git@901b871f1b25879e9062ab5a96e79d93bbc600c3
 logan==0.3.1
 South==0.7.6
 Distutils2==1.0a4
