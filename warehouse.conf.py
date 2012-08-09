@@ -17,7 +17,6 @@ SOUTH_DATABASE_ADAPTERS = {
 }
 
 EXTRA_INSTALLED_APPS = [
-    "raven.contrib.django",
     "djangosecure",
 ]
 
@@ -66,3 +65,32 @@ SECURE_FRAME_DENY = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_SSL_REDIRECT = True
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": True,
+
+    "formatters": {
+        "console": {
+            "format": "[%(asctime)s][%(levelname)s] %(name)s %(filename)s:%(funcName)s:%(lineno)d | %(message)s",
+            "datefmt": "%H:%M:%S",
+            },
+        },
+
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "console",
+            },
+        "sentry": {
+            "level": "ERROR",
+            "class": "raven.handlers.logging.SentryHandler",
+            },
+        },
+
+    "root": {
+        "handlers": ["console", "sentry"],
+        "level": "DEBUG",
+    },
+}
