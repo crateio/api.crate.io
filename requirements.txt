@@ -15,7 +15,7 @@ Distutils2==1.0a4
 
 
 # Warehouse
-warehouse==0.1.6
+warehouse==0.1.7
 
 
 # Configuration
