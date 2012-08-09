@@ -66,6 +66,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_SSL_REDIRECT = True
 
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": True,
