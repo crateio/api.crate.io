@@ -4,7 +4,7 @@ import twelve
 
 config = twelve.Configuration(adapter="django")
 
-DEBUG = False
+DEBUG = True
 
 CONF_ROOT = os.path.dirname(__file__)
 
