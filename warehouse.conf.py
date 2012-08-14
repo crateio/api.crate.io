@@ -94,3 +94,5 @@ LOGGING = {
         "level": "DEBUG",
     },
 }
+
+WAREHOUSE_API_HISTORY = False
