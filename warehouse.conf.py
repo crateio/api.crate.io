@@ -95,4 +95,5 @@ LOGGING = {
     },
 }
 
-WAREHOUSE_API_HISTORY = False
+if config.disable_warehouse_api_history:
+    WAREHOUSE_API_HISTORY = False
