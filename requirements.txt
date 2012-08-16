@@ -17,7 +17,7 @@ lxml==2.3.5
 
 
 # Warehouse
-warehouse==0.4
+warehouse==0.4.1
 
 
 # Configuration
