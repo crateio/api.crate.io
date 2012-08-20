@@ -2,6 +2,13 @@
 mimeparse==0.1.3
 python-dateutil==2.1
 
+# RQ Requirements
+# python-dateutil==2.1
+six==1.1.0
+times==0.5
+Logbook==0.3
+pytz==2012d
+
 
 # Warehouse Requirements
 Django==1.4.1
@@ -15,6 +22,8 @@ Distutils2==1.0a4
 docutils==0.9.1
 lxml==2.3.5
 django-uuidfield==0.4.0
+redis==2.6.2
+rq==0.3.0
 
 
 # Warehouse
