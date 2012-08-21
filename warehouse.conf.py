@@ -92,7 +92,7 @@ SECURE_SSL_REDIRECT = True
 
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": True,
+    "disable_existing_loggers": False,
 
     "formatters": {
         "console": {
