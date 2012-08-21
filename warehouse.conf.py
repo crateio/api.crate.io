@@ -99,3 +99,7 @@ if config.disable_warehouse_api_history:
     WAREHOUSE_API_HISTORY = False
 
 WAREHOUSE_SYNC_USERS = ["PyPI"]
+
+WAREHOUSE_DOWNLOAD_SOURCES = {
+    "PyPI": "warehouse.downloads.pypi",
+}
