@@ -1,6 +1,7 @@
 # Warehouse Configuration
 import os
 import twelve
+import urlparse
 
 config = twelve.Configuration(adapter="django")
 
@@ -11,6 +12,28 @@ CONF_ROOT = os.path.dirname(__file__)
 DATABASES = config.databases
 
 DATABASES["default"]["ENGINE"] = "django_hstore.postgresql_psycopg2"
+
+if "REDIS_URL" in os.environ:
+    redis_url = os.environ["REDIS_URL"]
+elif "OPENREDIS_URL" in os.environ:
+    redis_url = os.environ["OPENREDIS_URL"]
+elif "REDISTOGO_URL" in os.environ:
+    redis_url = os.environ["REDISTOGO_URL"]
+else:
+    redis_url = "redis://localhost:6379/"
+
+parsed_redis_url = urlparse.urlparse(redis_url)
+
+REDIS_HOST = parsed_redis_url.hostname
+REDIS_PORT = int(parsed_redis_url.port)
+REDIS_PASSWORD = parsed_redis_url.password
+
+RQ_REDIS_HOST = REDIS_HOST
+RQ_REDIS_PORT = REDIS_PORT
+RQ_REDIS_PASSWORD = REDIS_PASSWORD
+RQ_REDIS_DB = 1
+
+PYPI_REDIS_DATABASE = 2
 
 SOUTH_DATABASE_ADAPTERS = {
     "default": "south.db.postgresql_psycopg2",
