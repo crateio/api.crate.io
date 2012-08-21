@@ -41,6 +41,7 @@ SOUTH_DATABASE_ADAPTERS = {
 
 EXTRA_INSTALLED_APPS = [
     "djangosecure",
+    "raven.contrib.django",
 ]
 
 EXTRA_MIDDLEWARE_CLASSES = [
