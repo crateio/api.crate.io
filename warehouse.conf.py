@@ -98,20 +98,20 @@ LOGGING = {
         "console": {
             "format": "[%(asctime)s][%(levelname)s] %(name)s %(filename)s:%(funcName)s:%(lineno)d | %(message)s",
             "datefmt": "%H:%M:%S",
-            },
         },
+    },
 
     "handlers": {
         "console": {
             "level": "DEBUG",
             "class": "logging.StreamHandler",
             "formatter": "console",
-            },
+        },
         "sentry": {
             "level": "ERROR",
             "class": "raven.handlers.logging.SentryHandler",
-            },
         },
+    },
 
     "root": {
         "handlers": ["console", "sentry"],
