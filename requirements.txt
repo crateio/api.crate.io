@@ -28,7 +28,7 @@ rq==0.3.0
 
 
 # Warehouse
-warehouse==0.8.3
+warehouse==0.8.4
 
 
 # Configuration
