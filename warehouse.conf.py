@@ -91,11 +91,11 @@ SECURE_SSL_REDIRECT = True
 
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": False,
+    "disable_existing_loggers": True,
 
     "formatters": {
         "console": {
-            "format": "[%(asctime)s][%(levelname)s] %(name)s %(filename)s:%(funcName)s:%(lineno)d | %(message)s",
+            "format": "[%(asctime)s] [%(levelname)s] [%(name)s]  %(message)s",
             "datefmt": "%H:%M:%S",
         },
     },
@@ -115,6 +115,13 @@ LOGGING = {
     "root": {
         "handlers": ["console", "sentry"],
         "level": "DEBUG",
+    },
+
+    "loggers": {
+        "requests.packages.urllib3": {
+            "handlers": [],
+            "propagate": False,
+        },
     },
 }
 
