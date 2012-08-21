@@ -28,7 +28,7 @@ git+https://github.com/dstufft/rq.git@ef8fe7f285b2e6af36594b5bc7509f8464626e55
 
 
 # Warehouse
-warehouse==0.8.6
+warehouse==0.8.7
 
 
 # Configuration
