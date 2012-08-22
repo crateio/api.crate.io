@@ -24,7 +24,7 @@ django-uuidfield==0.4.0
 redis==2.6.2
 requests==0.13.8
 #rq==0.3.0
-git+https://github.com/dstufft/rq.git@ef8fe7f285b2e6af36594b5bc7509f8464626e55
+git+https://github.com/nvie/rq.git@978ba2dff97ef202b1de285ef72586c5499ffa12
 
 
 # Warehouse
