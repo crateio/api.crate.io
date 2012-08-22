@@ -18,6 +18,10 @@ DATABASES = {
 
 DATABASES["default"]["ENGINE"] = "django_hstore.postgresql_psycopg2"
 
+SOUTH_DATABASE_ADAPTERS = {
+    "default": "south.db.postgresql_psycopg2",
+}
+
 if "REDIS_URL" in os.environ:
     redis_url = os.environ["REDIS_URL"]
 elif "OPENREDIS_URL" in os.environ:
@@ -40,9 +44,6 @@ RQ_REDIS_DB = 1
 
 PYPI_REDIS_DATABASE = 2
 
-SOUTH_DATABASE_ADAPTERS = {
-    "default": "south.db.postgresql_psycopg2",
-}
 
 EXTRA_INSTALLED_APPS = [
     "djangosecure",
