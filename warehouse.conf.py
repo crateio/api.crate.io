@@ -5,11 +5,16 @@ import urlparse
 
 config = twelve.Configuration(adapter="django")
 
+import dj_database_url
+
+
 DEBUG = False
 
 CONF_ROOT = os.path.dirname(__file__)
 
-DATABASES = config.databases
+DATABASES = {
+    "default": dj_database_url.config(default="postgres://localhost"),
+}
 
 DATABASES["default"]["ENGINE"] = "django_hstore.postgresql_psycopg2"
 
