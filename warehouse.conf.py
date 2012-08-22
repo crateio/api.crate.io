@@ -1,8 +1,5 @@
 # Warehouse Configuration
 import os
-import twelve
-
-config = twelve.Configuration(adapter="django")
 
 import dj_database_url
 import dj_redis_url
@@ -36,23 +33,19 @@ EXTRA_MIDDLEWARE_CLASSES = [
     "djangosecure.middleware.SecurityMiddleware",
 ]
 
-if "default" in config.emails:
-    for k, v in config.emails["default"].items():
-        globals()["EMAIL_%s" % k] = v
-
-SECRET_KEY = config.secret_key
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 STATIC_URL = "https://dtl9zya2lik3.cloudfront.net/"
 
 #DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 DEFAULT_FILE_STORAGE = "fixed_storage.FixedS3BotoStorage"
 
-AWS_ACCESS_KEY_ID = config.aws_access_key_id
-AWS_SECRET_ACCESS_KEY = config.aws_secret_access_key
-AWS_STORAGE_BUCKET_NAME = config.aws_storage_bucket_name
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 
-if config.aws_s3_custom_domain:
-    AWS_S3_CUSTOM_DOMAIN = config.aws_s3_custom_domain
+if "AWS_S3_CUSTOM_DOMAIN" in os.environ:
+    AWS_S3_CUSTOM_DOMAIN = os.environ["AWS_S3_CUSTOM_DOMAIN"]
 
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_SECURE_URLS = False
@@ -114,7 +107,7 @@ LOGGING = {
     },
 }
 
-if config.disable_warehouse_api_history:
+if "DISABLE_WAREHOUSE_API_HISTORY" in os.environ:
     WAREHOUSE_API_HISTORY = False
 
 WAREHOUSE_SYNC_USERS = ["PyPI"]
