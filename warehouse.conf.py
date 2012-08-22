@@ -20,9 +20,9 @@ SOUTH_DATABASE_ADAPTERS = {
 }
 
 REDIS = {
-    "default": dj_redis_url(default="redis://localhost", db=0),
-    "rq": dj_redis_url(default="redis://localhost", db=1),
-    "pypi": dj_redis_url(default="redis://localhost", db=2),
+    "default": dj_redis_url.config(default="redis://localhost", db=0),
+    "rq": dj_redis_url.config(default="redis://localhost", db=1),
+    "pypi": dj_redis_url.config(default="redis://localhost", db=2),
 }
 
 EXTRA_INSTALLED_APPS = [
