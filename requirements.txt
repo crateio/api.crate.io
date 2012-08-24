@@ -54,7 +54,7 @@ gunicorn==0.14.6
 
 # Error Logging
 simplejson==2.6.1
-raven==2.0.4
+raven==2.0.5
 
 
 # Security
