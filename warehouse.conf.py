@@ -5,7 +5,7 @@ import dj_database_url
 import dj_redis_url
 
 
-DEBUG = False
+DEBUG = True
 
 CONF_ROOT = os.path.dirname(__file__)
 
