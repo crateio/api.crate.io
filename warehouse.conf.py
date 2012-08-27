@@ -135,3 +135,5 @@ WAREHOUSE_SYNC_USERS = ["PyPI"]
 WAREHOUSE_DOWNLOAD_SOURCES = {
     "PyPI": "warehouse.downloads.pypi",
 }
+
+WAREHOUSE_ALWAYS_MODIFIED_NOW = False
