@@ -28,7 +28,7 @@ REDIS = {
 CACHES = {
     "default": {
         "BACKEND": "redis_cache.RedisCache",
-        "LOCATION": ":".join([REDIS["default"]["HOST"], REDIS["default"]["PORT"]]),
+        "LOCATION": ":".join([REDIS["default"]["HOST"], str(REDIS["default"]["PORT"])]),
         "OPTIONS": {
             "DB": REDIS["default"]["DB"],
             "PASSWORD": REDIS["default"]["PASSWORD"],
