@@ -22,6 +22,7 @@ Distutils2==1.0a4
 docutils==0.9.1
 lxml==2.3.5
 django-uuidfield==0.4.0
+hiredis==0.1.1
 redis==2.6.2
 requests==0.13.8
 #rq==0.3.0
@@ -40,6 +41,10 @@ dj-redis-url==0.1.4
 # Storage Backend
 django-storages==1.1.5
 boto==2.5.2
+
+
+# Caching
+django-redis-cache==0.9.5
 
 
 # Database

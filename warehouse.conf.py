@@ -25,6 +25,17 @@ REDIS = {
     "pypi": dj_redis_url.config(default="redis://localhost", db=2),
 }
 
+CACHES = {
+    "default": {
+        "BACKEND": "redis_cache.RedisCache",
+        "LOCATION": ":".join([REDIS["default"]["HOST"], REDIS["default"]["PORT"]]),
+        "OPTIONS": {
+            "DB": REDIS["default"]["DB"],
+            "PASSWORD": REDIS["default"]["PASSWORD"],
+        },
+    },
+}
+
 EXTRA_INSTALLED_APPS = [
     "djangosecure",
 ]
