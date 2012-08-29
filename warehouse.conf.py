@@ -40,8 +40,15 @@ EXTRA_INSTALLED_APPS = [
     "djangosecure",
 ]
 
-EXTRA_MIDDLEWARE_CLASSES = [
+MIDDLEWARE_CLASSES = [
+    "django.middleware.gzip.GZipMiddleware",
     "djangosecure.middleware.SecurityMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.http.ConditionalGetMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
 ]
 
 SECRET_KEY = os.environ["SECRET_KEY"]
