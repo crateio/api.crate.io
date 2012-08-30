@@ -131,6 +131,10 @@ LOGGING = {
             "handlers": [],
             "propagate": False,
         },
+        "newrelic.lib.requests.packages.urllib3": {
+            "handlers": [],
+            "propagate": False,
+        },
     },
 }
 
