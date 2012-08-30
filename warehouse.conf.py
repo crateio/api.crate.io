@@ -58,14 +58,14 @@ STATIC_URL = "https://dtl9zya2lik3.cloudfront.net/"
 #DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 DEFAULT_FILE_STORAGE = "fixed_storage.FixedS3BotoStorage"
 
-PASSWORD_HASHERS = (
+PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.BCryptPasswordHasher",
     "django.contrib.auth.hashers.PBKDF2PasswordHasher",
     "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
     "django.contrib.auth.hashers.SHA1PasswordHasher",
     "django.contrib.auth.hashers.MD5PasswordHasher",
     "django.contrib.auth.hashers.CryptPasswordHasher",
-)
+]
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
