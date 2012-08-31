@@ -150,7 +150,7 @@ if "DISABLE_WAREHOUSE_API_HISTORY" in os.environ:
 WAREHOUSE_SYNC_USERS = ["PyPI"]
 
 WAREHOUSE_DOWNLOAD_SOURCES = {
-    "PyPI": "warehouse.downloads.pypi",
+    "PyPI": "warehouse.downloads.pypi.downloads",
 }
 
 WAREHOUSE_ALWAYS_MODIFIED_NOW = False
