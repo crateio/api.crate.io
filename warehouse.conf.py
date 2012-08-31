@@ -138,6 +138,12 @@ LOGGING = {
     },
 }
 
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.simple_backend.SimpleEngine",
+    },
+}
+
 if "DISABLE_WAREHOUSE_API_HISTORY" in os.environ:
     WAREHOUSE_API_HISTORY = False
 
