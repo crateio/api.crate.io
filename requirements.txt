@@ -31,7 +31,7 @@ git+https://github.com/nvie/rq.git@978ba2dff97ef202b1de285ef72586c5499ffa12
 
 
 # Warehouse
-warehouse==0.9.23
+warehouse==0.9.24
 
 
 # Configuration
