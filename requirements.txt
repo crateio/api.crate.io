@@ -25,7 +25,7 @@ lxml==2.3.5
 django-uuidfield==0.4.0
 hiredis==0.1.1
 redis==2.6.2
-requests==0.13.9
+requests==0.14
 #rq==0.3.0
 git+https://github.com/nvie/rq.git@978ba2dff97ef202b1de285ef72586c5499ffa12
 
