@@ -70,4 +70,4 @@ py-bcrypt==0.2
 
 
 # Performance
-newrelic==1.4.0.137
+newrelic==1.5.0.103
