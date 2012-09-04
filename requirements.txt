@@ -28,6 +28,7 @@ redis==2.6.2
 requests==0.14
 #rq==0.3.0
 git+https://github.com/nvie/rq.git@978ba2dff97ef202b1de285ef72586c5499ffa12
+progress==1.0.2
 
 
 # Warehouse
