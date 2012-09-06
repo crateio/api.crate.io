@@ -81,10 +81,6 @@ AWS_HEADERS = {
     "Cache-Control": "max-age=31556926",
 }
 
-WAREHOUSE_PACKAGE_BASE_DIR = "dists"
-WAREHOUSE_PACKAGE_PATH_HASH = "sha256"
-WAREHOUSE_DIGEST_TYPES = ["md5", "sha256"]
-
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 SESSION_COOKIE_SECURE = True
@@ -143,6 +139,10 @@ HAYSTACK_CONNECTIONS = {
         "ENGINE": "haystack.backends.simple_backend.SimpleEngine",
     },
 }
+
+WAREHOUSE_PACKAGE_BASE_DIR = "dists"
+WAREHOUSE_PACKAGE_PATH_HASH = "sha256"
+WAREHOUSE_DIGEST_TYPES = ["md5", "sha256"]
 
 if "DISABLE_WAREHOUSE_API_HISTORY" in os.environ:
     WAREHOUSE_API_HISTORY = False
