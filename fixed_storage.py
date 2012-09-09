@@ -39,4 +39,5 @@ class CachedS3BotoStaticFileStorage(CachedFilesMixin, FixedS3BotoStorage):
     def __init__(self, *args, **kwargs):
         super(CachedS3BotoStaticFileStorage, self).__init__(*args, **kwargs)
 
+        self.custom_domain = None
         self.location = "static/"
