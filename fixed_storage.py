@@ -2,6 +2,8 @@ import mimetypes
 
 from boto.s3.key import Key
 
+from django.contrib.staticfiles.storage import CachedFilesMixin
+
 from storages.backends.s3boto import S3BotoStorage
 
 
@@ -30,3 +32,11 @@ class FixedS3BotoStorage(S3BotoStorage):
         key.set_contents_from_file(content, headers=headers, policy=self.acl,
                                  reduced_redundancy=self.reduced_redundancy, rewind=True)
         return cleaned_name
+
+
+class CachedS3BotoStaticFileStorage(CachedFilesMixin, FixedS3BotoStorage):
+
+    def __init__(self, *args, **kwargs):
+        super(CachedS3BotoStaticFileStorage, self).__init__(*args, **kwargs)
+
+        self.location = "static/"
