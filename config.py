@@ -78,12 +78,6 @@ class Settings(WarehouseSettings):
     LOGGING["root"]["handlers"] += ["sentry"]
     LOGGING["loggers"]["newrelic.lib.requests.packages.urllib3"] = {"handlers": [], "propagate": False}
 
-    HAYSTACK_CONNECTIONS = {
-        "default": {
-            "ENGINE": "haystack.backends.simple_backend.SimpleEngine",
-        },
-    }
-
     WAREHOUSE_ALWAYS_MODIFIED_NOW = False
     WAREHOUSE_API_HISTORY = os.environ.get("DISABLE_WAREHOUSE_API_HISTORY", False)
     WAREHOUSE_DIGEST_TYPES = ["md5", "sha256"]
