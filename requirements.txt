@@ -38,6 +38,7 @@ warehouse==0.10.6
 # Configuration
 dj-database-url==0.2.1
 dj-redis-url==0.1.4
+dj-search-url==0.1
 
 
 # Storage Backend
