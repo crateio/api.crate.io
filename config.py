@@ -13,19 +13,15 @@ class Settings(WarehouseSettings):
     DATABASES["default"]["ENGINE"] = "django_hstore.postgresql_psycopg2"
     SOUTH_DATABASE_ADAPTERS = {"default": "south.db.postgresql_psycopg2"}
 
-    REDIS = {
-        "default": dj_redis_url.config(default="redis://localhost", db=0),
-        "rq": dj_redis_url.config(default="redis://localhost", db=1),
-        "pypi": dj_redis_url.config(default="redis://localhost", db=2),
-    }
+    REDIS = dj_redis_url.config(default="redis://localhost", db=0)
 
     CACHES = {
         "default": {
             "BACKEND": "redis_cache.RedisCache",
-            "LOCATION": "%s:%s" % (REDIS["default"]["HOST"], REDIS["default"]["PORT"]),
+            "LOCATION": "%s:%s" % (REDIS["HOST"], REDIS["PORT"]),
             "OPTIONS": {
-                "DB": REDIS["default"]["DB"],
-                "PASSWORD": REDIS["default"]["PASSWORD"],
+                "DB": REDIS["DB"],
+                "PASSWORD": REDIS["PASSWORD"],
             },
         },
     }
