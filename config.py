@@ -4,6 +4,7 @@ import os
 
 import dj_database_url
 import dj_redis_url
+import dj_search_url
 
 
 class Settings(WarehouseSettings):
@@ -25,6 +26,8 @@ class Settings(WarehouseSettings):
             },
         },
     }
+
+    HAYSTACK_CONNECTIONS = {"default": dj_search_url.config(default="elasticsearch://localhost:9200/api.crate.io")}
 
     PASSWORD_HASHERS = [
         "django.contrib.auth.hashers.BCryptPasswordHasher",
