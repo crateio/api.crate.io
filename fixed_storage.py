@@ -41,3 +41,4 @@ class CachedS3BotoStaticFileStorage(CachedFilesMixin, FixedS3BotoStorage):
 
         self.custom_domain = None
         self.location = "static/"
+        self.secure_urls = True
