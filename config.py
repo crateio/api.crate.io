@@ -1,10 +1,10 @@
-from warehouse.settings.base import WarehouseSettings
-
 import os
 
 import dj_database_url
 import dj_redis_url
 import dj_search_url
+
+from warehouse.settings.base import WarehouseSettings
 
 
 class Settings(WarehouseSettings):
