@@ -27,8 +27,7 @@ class Settings(WarehouseSettings):
         },
     }
 
-    #HAYSTACK_CONNECTIONS = {"default": dj_search_url.config(default="elasticsearch://localhost:9200/api.crate.io")}
-    HAYSTACK_CONNECTIONS = {"default": {"ENGINE": "haystack.backends.simple_backend.SimpleEngine"}}
+    HAYSTACK_CONNECTIONS = {"default": dj_search_url.config(default="elasticsearch://localhost:9200/api.crate.io")}
 
     PASSWORD_HASHERS = [
         "django.contrib.auth.hashers.BCryptPasswordHasher",
