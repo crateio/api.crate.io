@@ -16,7 +16,7 @@ django-appconf==0.5
 django-configurations==0.1
 django-model-utils==1.1.0
 django-hstore==1.1.1
-git+https://github.com/dstufft/django-tastypie.git@71cb2c52f4548e7292b1da713af6166df3176608
+git+https://github.com/dstufft/django-tastypie.git@12efc79288196135759a6a72b78733dc8221514c
 git+git://github.com/toastdriven/django-haystack.git@7a7bef247cb7c8bc0180d18ec1d5f158971d913c
 South==0.7.6
 Distutils2==1.0a4
