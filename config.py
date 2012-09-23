@@ -11,8 +11,6 @@ class Settings(WarehouseSettings):
     CONF_ROOT = os.path.dirname(os.path.abspath(__file__))
 
     DATABASES = {"default": dj_database_url.config(default="postgres://localhost/warehouse")}
-    DATABASES["default"]["ENGINE"] = "django_hstore.postgresql_psycopg2"
-    SOUTH_DATABASE_ADAPTERS = {"default": "south.db.postgresql_psycopg2"}
 
     REDIS = dj_redis_url.config(default="redis://localhost", db=0)
 
