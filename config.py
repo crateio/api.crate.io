@@ -61,6 +61,9 @@ class Settings(WarehouseSettings):
         "PyPI": "warehouse.downloads.pypi.downloads",
     }
 
+    if "WAREHOUSE_UPDATE_DOWNLOAD_COUNTS" in os.environ:
+        WAREHOUSE_UPDATE_DOWNLOAD_COUNTS = bool(int(os.environ.get("WAREHOUSE_UPDATE_DOWNLOAD_COUNTS", 1)))
+
 
 class Development(Settings):
     DEBUG = True
