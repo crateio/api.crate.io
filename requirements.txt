@@ -32,7 +32,7 @@ progress==1.0.2
 
 
 # Warehouse
-warehouse==0.12.2
+warehouse==0.12.3
 
 
 # Configuration
