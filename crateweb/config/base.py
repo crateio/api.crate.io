@@ -53,8 +53,12 @@ class Settings(object):
             "handlers": ["console", "sentry"],
         },
         "loggers": {
+            "boto": {
+                "handlers": ["sentry"],
+                "propagate": False,
+            },
             "newrelic.lib.requests.packages.urllib3": {
-                "handlers": [],
+                "handlers": ["sentry"],
                 "propagate": False,
             },
         },
