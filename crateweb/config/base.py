@@ -4,10 +4,8 @@ import dj_database_url
 import dj_redis_url
 import dj_search_url
 
-from warehouse.settings.base import ApiSettings
 
-
-class Settings(ApiSettings):
+class Settings(object):
     CONF_ROOT = os.path.dirname(os.path.abspath(__file__))
 
     DATABASES = {"default": dj_database_url.config(default="postgres://localhost/warehouse")}
@@ -95,9 +93,9 @@ class Production(Settings):
         (0, "djangosecure.middleware.SecurityMiddleware"),
     ]
 
-    DEFAULT_FILE_STORAGE = "fixed_storage.FixedS3BotoStorage"
+    DEFAULT_FILE_STORAGE = "crateweb.storage.FixedS3BotoStorage"
 
-    STATICFILES_STORAGE = "fixed_storage.CachedS3BotoStaticFileStorage"
+    STATICFILES_STORAGE = "crateweb.storage.CachedS3BotoStaticFileStorage"
 
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
