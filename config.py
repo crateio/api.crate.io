@@ -4,10 +4,10 @@ import dj_database_url
 import dj_redis_url
 import dj_search_url
 
-from warehouse.settings.base import WarehouseSettings
+from warehouse.settings.base import ApiSettings
 
 
-class Settings(WarehouseSettings):
+class Settings(ApiSettings):
     CONF_ROOT = os.path.dirname(os.path.abspath(__file__))
 
     DATABASES = {"default": dj_database_url.config(default="postgres://localhost/warehouse")}
@@ -44,10 +44,23 @@ class Settings(WarehouseSettings):
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_BROWSER_XSS_FILTER = True
 
-    LOGGING = WarehouseSettings.LOGGING
-    LOGGING["handlers"]["sentry"] = {"level": "ERROR", "class": "raven.handlers.logging.SentryHandler"}
-    LOGGING["root"]["handlers"] += ["sentry"]
-    LOGGING["loggers"]["newrelic.lib.requests.packages.urllib3"] = {"handlers": [], "propagate": False}
+    LOGGING = {
+        "handlers": {
+            "sentry": {
+                "level": "ERROR",
+                "class": "raven.handlers.logging.SentryHandler",
+            },
+        },
+        "root": {
+            "handlers": ["console", "sentry"],
+        },
+        "loggers": {
+            "newrelic.lib.requests.packages.urllib3": {
+                "handlers": [],
+                "propagate": False,
+            },
+        },
+    }
 
     WAREHOUSE_ALWAYS_MODIFIED_NOW = False
     WAREHOUSE_API_HISTORY = os.environ.get("DISABLE_WAREHOUSE_API_HISTORY", False)
@@ -78,7 +91,9 @@ class Development(Settings):
 class Production(Settings):
     DEBUG = False
 
-    MIDDLEWARE_CLASSES = ["djangosecure.middleware.SecurityMiddleware"] + WarehouseSettings.MIDDLEWARE_CLASSES
+    MIDDLEWARE = [
+        (0, "djangosecure.middleware.SecurityMiddleware"),
+    ]
 
     DEFAULT_FILE_STORAGE = "fixed_storage.FixedS3BotoStorage"
 
