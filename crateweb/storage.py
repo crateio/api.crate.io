@@ -6,6 +6,8 @@ from django.contrib.staticfiles.storage import CachedFilesMixin
 
 from storages.backends.s3boto import S3BotoStorage
 
+from warehouse.conf import settings
+
 
 class FixedS3BotoStorage(S3BotoStorage):
 
@@ -39,6 +41,6 @@ class CachedS3BotoStaticFileStorage(CachedFilesMixin, FixedS3BotoStorage):
     def __init__(self, *args, **kwargs):
         super(CachedS3BotoStaticFileStorage, self).__init__(*args, **kwargs)
 
-        self.custom_domain = None
+        self.custom_domain = getattr(settings, "STATICFILES_DOMAIN", None)
         self.location = "static/"
         self.secure_urls = True

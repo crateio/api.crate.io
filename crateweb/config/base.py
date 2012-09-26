@@ -96,6 +96,7 @@ class Production(Settings):
     DEFAULT_FILE_STORAGE = "crateweb.storage.FixedS3BotoStorage"
 
     STATICFILES_STORAGE = "crateweb.storage.CachedS3BotoStaticFileStorage"
+    STATICFILES_DOMAIN = os.environ.get("STATICFILES_DOMAIN", None)
 
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
