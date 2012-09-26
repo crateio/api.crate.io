@@ -17,5 +17,5 @@ function puts-step (){
 # Collect Static Files
 if (python -m warehouse help collectstatic &> /dev/null) then
     puts-step "Collecting static files"
-    python -m warehouse collectstatic --noinput | indent
+    python -m warehouse collectstatic --noinput 1> /dev/null
 fi
