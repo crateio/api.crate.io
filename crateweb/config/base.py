@@ -89,6 +89,20 @@ class Development(Settings):
     MEDIA_ROOT = os.path.join(Settings.CONF_ROOT, "site_media", "media")
     MEDIA_URL = "/site_media/media/"
 
+    INSTALLED_APPS = [
+        "devserver",
+    ]
+
+    DEVSERVER_MODULES = [
+        "devserver.modules.sql.SQLRealTimeModule",
+        "devserver.modules.sql.SQLSummaryModule",
+        "devserver.modules.profile.ProfileSummaryModule",
+        "devserver.modules.cache.CacheSummaryModule",
+        #"devserver.modules.profile.LineProfilerModule",
+    ]
+
+    DEVSERVER_AUTO_PROFILE = True
+
 
 class Production(Settings):
     DEBUG = False

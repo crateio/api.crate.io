@@ -1,0 +1,2 @@
+git+git://github.com/dcramer/django-devserver#egg=django-devserver
+line-profiler
