@@ -61,6 +61,10 @@ class Settings(object):
                 "handlers": ["sentry"],
                 "propagate": False,
             },
+            "pyelasticsearch": {
+                "handlers": ["sentry"],
+                "propagate": False,
+            }
         },
     }
 
