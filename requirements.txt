@@ -55,7 +55,8 @@ psycopg2==2.4.5
 
 
 # Search
-pyelasticsearch==0.1
+# pyelasticsearch==0.1
+git+https://github.com/dstufft/pyelasticsearch.git@85832a52a3f7d1a240e994f1493abdcf17c465d4
 
 
 # Server
