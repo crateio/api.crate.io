@@ -3,4 +3,5 @@
 
 # Invoke - PLZ 2 BE REAL RELEASE <3
 https://github.com/nsi-iff/fluidity/tarball/468627ea
+pexpect
 git+git://github.com/pyinvoke/invoke.git
