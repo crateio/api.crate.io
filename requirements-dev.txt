@@ -1,5 +1,5 @@
-#git+git://github.com/dcramer/django-devserver#egg=django-devserver
-#line-profiler
+git+git://github.com/dcramer/django-devserver#egg=django-devserver
+line-profiler
 
 # Invoke - PLZ 2 BE REAL RELEASE <3
 https://github.com/nsi-iff/fluidity/tarball/468627ea
