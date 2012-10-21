@@ -69,7 +69,6 @@ class Settings(object):
     }
 
     WAREHOUSE_ALWAYS_MODIFIED_NOW = False
-    WAREHOUSE_API_HISTORY = os.environ.get("DISABLE_WAREHOUSE_API_HISTORY", False)
     WAREHOUSE_DIGEST_TYPES = ["md5", "sha256"]
     WAREHOUSE_PACKAGE_BASE_DIR = "dists"
     WAREHOUSE_PACKAGE_PATH_HASH = "sha256"
@@ -79,6 +78,9 @@ class Settings(object):
     WAREHOUSE_DOWNLOAD_SOURCES = {
         "PyPI": "warehouse.downloads.pypi.downloads",
     }
+
+    if "WAREHOUSE_API_HISTORY" in os.environ:
+        WAREHOUSE_API_HISTORY = bool(int(os.environ.get("WAREHOUSE_API_HISTORY", 1)))
 
     if "WAREHOUSE_UPDATE_DOWNLOAD_COUNTS" in os.environ:
         WAREHOUSE_UPDATE_DOWNLOAD_COUNTS = bool(int(os.environ.get("WAREHOUSE_UPDATE_DOWNLOAD_COUNTS", 1)))
